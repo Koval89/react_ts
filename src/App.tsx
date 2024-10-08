@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
 import './App.css';
+import Products from "./components/Products/Products";
 
 
-function App() {
+const App:FC=()=> {
+
+
   return (
-   <div>
-   </div>
+   <>
+<Products/>
+   </>
   );
 }
 
