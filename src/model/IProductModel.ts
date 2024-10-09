@@ -1,6 +1,6 @@
 import {IDimensionsModel} from "./IDimensionsModel";
 import {IReviewsModel} from "./IReviewsModel";
-import {IMetaModel} from "./IMetaModel";
+
 
 export interface IProductModel {
     "id": number,
@@ -15,14 +15,19 @@ export interface IProductModel {
     "brand"?: string,
     "sku": string,
     "weight": number,
-    "dimensions"?: IDimensionsModel,
+    dimensions?: IDimensionsModel,
     "warrantyInformation": string,
     "shippingInformation": string,
     "availabilityStatus": string,
-    "reviews"?: IReviewsModel[],
+    "reviews": IReviewsModel[],
     "returnPolicy": string,
     "minimumOrderQuantity": number,
-    "meta": IMetaModel,
+    meta?: {
+        "createdAt": string,
+        "updatedAt": string,
+        "barcode": string,
+        "qrCode":string
+    },
     "images": string[],
     "thumbnail": string
 }
