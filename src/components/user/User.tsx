@@ -1,4 +1,4 @@
-import React, {FC, ReactNode} from 'react';
+import React, {FC} from 'react';
 import {IUserModel} from "../../model/IUserModel";
 
 type IUserProps = {
@@ -6,7 +6,7 @@ type IUserProps = {
     lift: (id:number) => void
 }
 
-const User: FC<IUserProps &  {singleChild?:ReactNode}> = ({user,lift}) => {
+const User: FC<IUserProps > = ({user,lift}) => {
     return (
         <div>
             <div key={user.id}>

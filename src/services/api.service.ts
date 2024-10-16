@@ -11,11 +11,14 @@ const axiosInstance = axios.create({
 export const userService = {
     getUsers: async (): Promise<IUserModel[]>=>{
         return (await axiosInstance.get<IResponseUsersModel>('/users')).data.users
+
+
 }
 }
 export const postService = {
     getPostOFUsers: async (id:number):Promise<IPostModel[]>=>{
         let axiosResponce = await axiosInstance.get<IPostsModel>('/posts/user/'+id)
         return axiosResponce.data.posts
+        
     }
 }

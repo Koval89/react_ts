@@ -3,6 +3,7 @@ import {IUserModel} from "../../model/IUserModel";
 import User from "../user/User";
 import {userService} from "../../services/api.service";
 
+
 type IUsersProps = {
     lift: (id:number) => void
 }
@@ -15,6 +16,7 @@ const Users:FC<IUsersProps> = ({lift}) => {
             setUsers(await userService.getUsers())
         }
         getUsers()
+
 
         return ()=>{
             console.log('useEffect done')
