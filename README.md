@@ -49,3 +49,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 git rm .idea/ -r --cached                   видаляє з трекінгу все що є в папці idea
 git add -u .idea/                           зафіксувати юзера від імені якого буде все буде відбуватись і папку яку будемо комітити 
 git commit -m "Removed the .idea folder"    по факту коміт
+
+ДЗ:
+Взяти з dummyjson будь-який ендпоінт, який повертає багато об'єктів (products,carts,users etc...), 
+та реалізувати пагінацію цих об'єктів. Крок пагінації ви визначаєте самостійно
