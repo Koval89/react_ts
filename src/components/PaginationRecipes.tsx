@@ -31,7 +31,7 @@ if(page){
         if(!query.get('page')){
             setQuery({page:'1'})
         }
-    },[query.get('page')])
+    },[query.get('page')]);
 
     return (
         <div>
