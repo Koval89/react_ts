@@ -27,6 +27,11 @@ if(page){
 }
 
     };
+    useEffect(()=>{
+        if(!query.get('page')){
+            setQuery({page:'1'})
+        }
+    },[query.get('page')])
 
     return (
         <div>
