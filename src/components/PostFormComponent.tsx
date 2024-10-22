@@ -2,6 +2,8 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {postValidator} from "../validators/post.validator";
+import {newPost} from "../services/form.post.api.service";
+
 
 type PostProps = {
     id: number,
@@ -22,8 +24,10 @@ const PostFormComponent = () => {
 
 
     const customHendler = (dataFromForm: PostProps) => {
+        newPost(dataFromForm).then(response=> console.log(response))
         console.log(dataFromForm)
     }
+
     return (
         <form onSubmit={handleSubmit(customHendler)}>
             <div><label>
