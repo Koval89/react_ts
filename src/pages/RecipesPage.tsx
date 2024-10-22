@@ -30,7 +30,7 @@ const RecipesPage = () => {
 
     return (
         <div>
-            <Recipes recipes={recipes} />
+            <Recipes recipes={recipes}   />
             <PaginationRecipes buttonOf={buttonOf} />
         </div>
     );

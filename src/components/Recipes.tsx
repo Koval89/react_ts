@@ -10,7 +10,7 @@ const Recipes:FC<RecipesProps> = ({recipes}) => {
     return (
         <div>
             {
-                recipes.map(recipes=><div>{recipes.name}</div>)
+                recipes.map(recipes=><div >{recipes.name}</div>)
             }
         </div>
     );
