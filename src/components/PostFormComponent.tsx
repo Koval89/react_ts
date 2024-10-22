@@ -6,7 +6,7 @@ import {newPost} from "../services/form.post.api.service";
 
 
 type PostProps = {
-    id: number,
+    userId: number,
     title: string,
     body: string
 }
@@ -31,9 +31,9 @@ const PostFormComponent = () => {
     return (
         <form onSubmit={handleSubmit(customHendler)}>
             <div><label>
-                <input type='number' placeholder={'id'} {...register('id')}/>
+                <input type='number' placeholder={'userId'} {...register('userId')}/>
 
-                {errors.id && <div>{errors.id.message}</div>}
+                {errors.userId && <div>{errors.userId.message}</div>}
             </label>
             </div>
             <div>

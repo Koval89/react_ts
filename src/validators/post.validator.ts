@@ -2,7 +2,7 @@
 import Joi from "joi";
 
 export const postValidator =Joi.object({
-    id:Joi.number()
+    userId:Joi.number()
         .min(1)
         .max(100)
         .messages({
