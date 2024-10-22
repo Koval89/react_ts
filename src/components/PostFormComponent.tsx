@@ -24,6 +24,7 @@ const PostFormComponent = () => {
 
 
     const customHendler = (dataFromForm: PostProps) => {
+        newPost(dataFromForm).then(response=> console.log(response))
         console.log(dataFromForm)
     }
 
