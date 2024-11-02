@@ -1,25 +1,24 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {Context} from "../components/contextProvider/ContextProvider";
-import {IPostsModel} from "../models/IPostsModel";
-import comment from "../components/comment/Comment";
+import React, {FC} from 'react';
+import {useMyContext} from "../components/contextProvider/MyContext";
 
 
-
-
-const PostsWithCommentsPage = () => {
-    const [posts, setPosts] = useState<IPostsModel[]>([])
-    useEffect(() => {
-
-    }, []);
-    const context = useContext(Context)
-    console.log(context.postsSlice.allPosts)
-
+const PostsWithCommentsPage: FC = () => {
+    const {posts, comments} = useMyContext()
     return (
         <div>
-            post
+            <h1>Posts with Comments</h1>
             {
-                context.commentsSlice.allComments.map(comment=><div>{comment.name}</div>)
-            }
+                posts.map(post => (
+                    <div key={post.id}><h2>{post.id} - {post.title}</h2>
+                        <p>{post.body}</p>
+                        <h3>Comments</h3>
+                        <ul>
+                            {comments.filter(comment => comment.postId === post.id).map(comment => (
+                                <li key={comment.id}>{comment.body}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
         </div>
     );
 };

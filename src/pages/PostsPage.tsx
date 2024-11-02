@@ -1,18 +1,14 @@
-import React, { useEffect, useState} from 'react';
-import {IPostsModel} from "../models/IPostsModel";
-import {getPosts} from "../service/api.service";
+import React from 'react';
 import Post from "../components/post/Post";
+import {useMyContext} from "../components/contextProvider/MyContext";
+import {FC} from "react";
 
 
 
 
 
-const PostsPage  = () => {
-    const [posts, setPosts] = useState<IPostsModel[]>([])
-
-    useEffect(() => {
-        getPosts().then(posts=>setPosts(posts))
-    }, []);
+const PostsPage:FC = () => {
+    const {posts} = useMyContext();
     return (
         <div>
             {
@@ -20,6 +16,6 @@ const PostsPage  = () => {
             }
         </div>
     );
-};
+}
 
 export default PostsPage;

@@ -1,26 +1,16 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {ICommentsModel} from "../models/ICommentsModel";
-import {getComments} from "../service/api.service";
-
+import React, {FC} from 'react';
 import Comment from "../components/comment/Comment";
-import {Context} from "../components/contextProvider/ContextProvider";
-import comment from "../components/comment/Comment";
+import {useMyContext} from "../components/contextProvider/MyContext";
 
-const CommentsPage = () => {
+const CommentsPage:FC = () => {
 
-    const [comments, setComments] = useState<ICommentsModel[]>([])
+    const {comments} = useMyContext()
 
-    useEffect(() => {
-        getComments().then(comments=>setComments(comments))
-    }, []);
-
-    const {commentsSlice} = useContext(Context)
-
-    console.log(commentsSl ice)
+    console.log(comments)
     return (
         <div>
             {
-                commentsSlice.allComments.map(comment=><Comment comment={comment}/>)
+               comments.map(comment => <Comment key={comment.id} comment={comment}/>)
             }
         </div>
     );

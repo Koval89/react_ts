@@ -1,27 +1,12 @@
 import {createContext} from "react";
 import {IPostsModel} from "../../models/IPostsModel";
 import {ICommentsModel} from "../../models/ICommentsModel";
+import {IUsersModel} from "../../models/IUsersModel";
 
-type StoreType = {
-    postsSlice: {
-        allPosts: IPostsModel[],
-        post:null
-    },
-    commentsSlice:{
-        allComments:ICommentsModel[],
-        comment:null
-    }
+interface ContextProps{
+    users:IUsersModel[],
+    posts:IPostsModel[],
+    comments:ICommentsModel[]
 }
 
-export let defaultStorageValue: StoreType = {
-    postsSlice: {
-        allPosts: [],
-        post:null
-    },
-    commentsSlice:{
-        allComments:[],
-        comment:null
-    }
-}
-
-export let Context = createContext<StoreType>(defaultStorageValue)
+export let MyContext = createContext<ContextProps | undefined>(undefined)

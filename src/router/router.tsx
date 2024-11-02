@@ -6,6 +6,7 @@ import PostsPage from "../pages/PostsPage";
 import CommentsPage from "../pages/CommentsPage";
 import PostsWithCommentsPage from "../pages/PostsWithCommentsPage";
 
+
 export const router = createBrowserRouter([
     {
         path:'/',
